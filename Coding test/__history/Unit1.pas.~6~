@@ -1,0 +1,55 @@
+unit Unit1;
+
+interface
+
+uses
+  DUnitX.TestFramework;
+
+type
+  [TestFixture]
+  BankingTest = class
+  public
+    // Sample Methods
+    // Simple single Test
+    [Test]
+    procedure CreateAccountTest;
+    // Test with TestCase Attribute to supply parameters.
+    [Test]
+    [TestCase('TestA','1,2')]
+    [TestCase('TestB','3,4')]
+    procedure DepositTest(const AValue1 : Integer;const AValue2 : Integer);
+
+    [Test]
+    procedure WithdrawTest;
+
+    [Test]
+    procedure MiniStateMentTest;
+  end;
+
+implementation
+
+procedure BankingTest.CreateAccountTest;
+begin
+// Create a Bank object and call the method defined in the
+// bank class to create the account
+end;
+
+procedure BankingTest.DepositTest(const AValue1 : Integer;const AValue2 : Integer);
+begin
+// Create a Bank object with a customer account and deposit into the desired account
+end;
+
+procedure BankingTest.WithdrawTest;
+begin
+// Create a Bank object with a customer account and withdraw from the desired account
+end;
+
+procedure BankingTest.MiniStateMentTest;
+// Create a Bank object and produce a mini statement for the desired customer
+begin
+end;
+
+initialization
+  TDUnitX.RegisterTestFixture(BankingTest);
+
+end.

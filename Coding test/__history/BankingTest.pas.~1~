@@ -1,0 +1,75 @@
+unit BankTest;
+
+interface
+
+uses
+  DUnitX.TestFramework;
+
+type
+  [TestFixture]
+  BankingTest = class
+  public
+    [Setup]
+    procedure Setup;
+    [TearDown]
+    procedure TearDown;
+    // Sample Methods
+    // Simple single Test
+    [Test]
+    procedure CreateAccountTest;
+    [Test]
+    procedure DepositTest;
+    [Test]
+    procedure WithDrawTest;
+    [Test]
+    procedure MiniStatementTest;
+//    // Test with TestCase Attribute to supply parameters.
+//    [Test]
+//    [TestCase('TestA','1,2')]
+//    [TestCase('TestB','3,4')]
+//    procedure Test2(const AValue1 : Integer;const AValue2 : Integer);
+  end;
+
+implementation
+
+procedure BankingTest.Setup;
+begin
+// Create the bank object
+end;
+
+procedure BankingTest.TearDown;
+begin
+// Set the variable to nill so deconstructor is called on object
+end;
+
+procedure BankingTest.CreateAccountTest;
+begin
+// Create an account on the bank object, assert that it contains the account
+end;
+
+procedure BankingTest.DepositTest;
+begin
+// Create an account object, then deposit into the account. assert that account
+// balance = the value added
+end;
+
+procedure BankingTest.WithdrawTest;
+begin
+// Create an account object with a dummy balance, withdraw from account and assert
+// that the account is now empty or less the withdrawal amount
+end;
+
+procedure BankingTest.MiniStatementTest;
+begin
+// Create an account object, deposit a few times then call get statement
+// Assert that the statement contains the interactions with the bank
+end;
+
+//procedure BankingTest.Test2(const AValue1 : Integer;const AValue2 : Integer);
+//begin
+//end;
+
+initialization
+  TDUnitX.RegisterTestFixture(BankingTest);
+
+end.
